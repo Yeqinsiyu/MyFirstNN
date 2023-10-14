@@ -27,3 +27,7 @@ def normalizeData(data):
     sumofdatarow = np.where(sumofdatarow == 0 , 1 , 1  / sumofdatarow)
     returndata = data * sumofdatarow
     return returndata
+
+def activationRelu(originaloutput):
+    originaloutput = np.where(originaloutput > 0, originaloutput, 0)
+    return originaloutput

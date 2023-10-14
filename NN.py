@@ -1,5 +1,5 @@
 import numpy as np
-
+import dataC
 
 
 SHAPE_OF_LAYERS = [2, 4, 3, 5, 2]
@@ -11,7 +11,9 @@ class layer():
 
     def layerForward(self, inputs):
         output = np.dot(inputs, self.weightM) + self.biasM
-        return output
+        normaloutput = dataC.normalizeData(output)
+        activeoutput = dataC.activationRelu(normaloutput)
+        return activeoutput
     
 
 
