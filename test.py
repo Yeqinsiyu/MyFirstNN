@@ -3,7 +3,9 @@ import dataC
 import NN
 
 
-network = NN.network(NN.SHAPE_OF_LAYERS)
+data = dataC.createData(4)
+data = dataC.delTagData(data)
+a = np.array([[0, 0]])
 
-for i in range(len(network.layers)):
-    print(network.layers[i].weightM, network.layers[i].biasM, '\n')
+
+print(dataC.normalizeData(a))

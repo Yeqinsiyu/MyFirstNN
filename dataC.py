@@ -20,3 +20,10 @@ def createData(numberOfdata):
 
 def delTagData(data):
     return data[:, (0, 1)]
+
+def normalizeData(data):
+    absdata = np.absolute(data)
+    sumofdatarow = np.sum(absdata, axis=1, keepdims=True)
+    sumofdatarow = np.where(sumofdatarow == 0 , 1 , 1  / sumofdatarow)
+    returndata = data * sumofdatarow
+    return returndata
